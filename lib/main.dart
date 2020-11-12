@@ -31,11 +31,14 @@ class MyHomePage extends StatelessWidget {
             'Jonas Blendstrup Rasmussen',
             style: Theme.of(context).textTheme.headline3.copyWith(
                   fontWeight: FontWeight.bold,
+                  color: Colors.black,
                 ),
           ),
           Text(
             'A work in progress... Check back soon!',
-            style: Theme.of(context).textTheme.headline5,
+            style: Theme.of(context).textTheme.headline5.copyWith(
+                  color: Colors.black38,
+                ),
           ),
         ],
       ),
