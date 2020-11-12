@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+//flutter pub global run peanut:peanut
+
 void main() {
   runApp(MyApp());
 }
