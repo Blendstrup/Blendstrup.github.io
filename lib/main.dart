@@ -29,11 +29,13 @@ class MyHomePage extends StatelessWidget {
         children: <Widget>[
           Text(
             'Jonas Blendstrup Rasmussen',
-            style: Theme.of(context).textTheme.headline1,
+            style: Theme.of(context).textTheme.headline3.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
           ),
           Text(
             'A work in progress... Check back soon!',
-            style: Theme.of(context).textTheme.headline4,
+            style: Theme.of(context).textTheme.caption,
           ),
         ],
       ),
