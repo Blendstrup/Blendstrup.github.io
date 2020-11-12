@@ -35,7 +35,7 @@ class MyHomePage extends StatelessWidget {
           ),
           Text(
             'A work in progress... Check back soon!',
-            style: Theme.of(context).textTheme.caption,
+            style: Theme.of(context).textTheme.headline5,
           ),
         ],
       ),
