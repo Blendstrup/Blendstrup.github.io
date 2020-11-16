@@ -1,47 +1,39 @@
 import 'package:flutter/material.dart';
+import 'pages/splashscreen.dart';
+// pages
+import 'pages/homepage.dart';
 
 //flutter pub global run peanut:peanut
 
 void main() {
-  runApp(MyApp());
+  runApp(App());
 }
 
-class MyApp extends StatelessWidget {
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Jonas Blendstrup Rasmussen',
-      theme: ThemeData(
-        primarySwatch: Colors.amber,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(),
+      theme: ThemeData(visualDensity: VisualDensity.adaptivePlatformDensity),
+      home: SplashScreen(),
+      onGenerateRoute: _routes,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text(
-            'Jonas Blendstrup Rasmussen',
-            style: Theme.of(context).textTheme.headline3.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-          ),
-          Text(
-            'A work in progress... Check back soon!',
-            style: Theme.of(context).textTheme.headline5.copyWith(
-                  color: Colors.black38,
-                ),
-          ),
-        ],
-      ),
-    );
+Route<dynamic> _routes(RouteSettings settings) {
+  switch (settings.name) {
+    case 'home':
+      return PageRouteBuilder(
+        pageBuilder: (context, animation1, animation2) => HomePage(),
+        transitionDuration: Duration(seconds: 0),
+      );
+      break;
+    default:
+      return PageRouteBuilder(
+        pageBuilder: (context, animation1, animation2) => HomePage(),
+        transitionDuration: Duration(seconds: 0),
+      );
   }
 }
